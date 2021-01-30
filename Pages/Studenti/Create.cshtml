@@ -1,0 +1,66 @@
+﻿@page
+@model Kovacs_Gyongyi_Elisabeta_Proiect.Pages.Studenti.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Student.Nume" class="control-label"></label>
+                <input asp-for="Student.Nume" class="form-control" />
+                <span asp-validation-for="Student.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Prenume" class="control-label"></label>
+                <input asp-for="Student.Prenume" class="form-control" />
+                <span asp-validation-for="Student.Prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Data_nasterii" class="control-label"></label>
+                <input asp-for="Student.Data_nasterii" class="form-control" />
+                <span asp-validation-for="Student.Data_nasterii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Oras" class="control-label"></label>
+                <input asp-for="Student.Oras" class="form-control" />
+                <span asp-validation-for="Student.Oras" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.SpecializareID" class="control-label">Specializare</label>
+                <select asp-for="Student.SpecializareID" class="form-control" asp-items="ViewBag.SpecializareID">
+                </select>
+                <span asp-validation-for="Student.SpecializareID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.Forma_de_invatamant" class="control-label"></label>
+                <input asp-for="Student.Forma_de_invatamant" class="form-control" />
+                <span asp-validation-for="Student.Forma_de_invatamant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Student.CicluID" class="control-label">Ciclu</label>
+                <select asp-for="Student.CicluID" class="form-control" asp-items="ViewBag.CicluID">
+                </select>
+                <span asp-validation-for="Student.CicluID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
